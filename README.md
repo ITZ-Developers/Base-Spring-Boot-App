@@ -39,6 +39,7 @@ mvn liquibase:generateChangeLog -Dliquibase.diffTypes=data
 **4.** Ensure database is **created** before running application
 
 > [!NOTE]
+>
 > **Swagger UI:** `localhost:<PORT>/swagger-ui.html`
 
 <details>
@@ -108,4 +109,46 @@ mvn liquibase:generateChangeLog -Dliquibase.diffTypes=data
 | **get** (`MODEL_V`) → **list** (`MODEL_L`) → **autoComplete** → **create** (`MODEL_C`) → **update** (`MODEL_U`) → **delete** (`MODEL_D`) |
 
 > [!NOTE]
+>
 > `MODEL` is a 2-3 character abbreviation of the model name (e.g., `SE_P` for `ServerProvider`).
+
+---
+
+### .gitignore
+
+```
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.log
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+```

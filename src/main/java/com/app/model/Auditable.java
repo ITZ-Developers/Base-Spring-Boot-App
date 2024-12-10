@@ -1,7 +1,5 @@
 package com.app.model;
 
-import com.app.constant.AppConstant;
-
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedBy;
