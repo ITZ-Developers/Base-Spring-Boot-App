@@ -23,7 +23,7 @@ public class NotificationService {
     public <T> void sendMessage(T data, String cmd) {
         BaseMessageForm<T> form = new BaseMessageForm<>();
         form.setApp(RabbitMQConstant.SPRING_APP);
-        form.setCommand(cmd);
+        form.setCmd(cmd);
         form.setData(data);
         try {
             String msg = objectMapper.writeValueAsString(form);

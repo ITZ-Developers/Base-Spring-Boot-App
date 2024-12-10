@@ -12,7 +12,6 @@ import java.util.Optional;
 public class AuthenticationFacadeServiceImpl implements AuthenticationFacadeService {
     @Override
     public Authentication getAuthentication() {
-        return Optional.ofNullable(SecurityContextHolder.getContext().getAuthentication())
-                .orElseThrow(() -> new BadCredentialsException("Invalid token"));
+        return Optional.ofNullable(SecurityContextHolder.getContext().getAuthentication()).orElseThrow(() -> new BadCredentialsException("Invalid token"));
     }
 }
