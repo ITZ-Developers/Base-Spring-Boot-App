@@ -20,6 +20,45 @@ This is a base Spring Boot application that provides a foundation for building r
 "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqladmin" -u root -p password <new-password>
 ```
 
+**Xem liên kết của một bảng**
+
+```cmd
+SELECT
+    TABLE_NAME,
+    COLUMN_NAME,
+    CONSTRAINT_NAME,
+    REFERENCED_TABLE_NAME,
+    REFERENCED_COLUMN_NAME
+FROM 
+    INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE 
+    TABLE_SCHEMA = 'database_name'
+    AND TABLE_NAME = 'table_name';
+```
+
+**Đặt UTF-8 cho các table và cho database**
+
+```cmd
+ALTER DATABASE db_name CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+- Convert character :
+ALTER TABLE db_name.table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-  Generate query  Convert character all table :
+SELECT CONCAT('ALTER TABLE `', table_name, '` CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;')
+FROM information_schema.tables
+WHERE table_schema = 'db_name';
+```
+
+**Tạo user và grant quyền db**
+
+```cmd
+CREATE USER 'user_Po54a' IDENTIFIED BY 'epmxV9H1SNsWILvyUIJlEgbmgCbNHiQ4';
+CREATE USER 'user_Po54a'@'localhost' IDENTIFIED BY 'epmxV9H1SNsWILvyUIJlEgbmgCbNHiQ4';
+GRANT ALL PRIVILEGES ON db_tenant.* TO 'user_Po54a';
+FLUSH PRIVILEGES;
+```
+
 **Liquibase Changelog Export Data:**
 
 ```
