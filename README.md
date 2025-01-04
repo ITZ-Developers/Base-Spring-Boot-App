@@ -20,7 +20,7 @@ This is a base Spring Boot application that provides a foundation for building r
 "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqladmin" -u root -p password <new-password>
 ```
 
-**Xem liên kết của một bảng**
+**Inspect table relationships**
 
 ```cmd
 SELECT
@@ -36,7 +36,7 @@ WHERE
     AND TABLE_NAME = 'table_name';
 ```
 
-**Đặt UTF-8 cho các table và cho database**
+**Set UTF-8 for tables and the database**
 
 ```cmd
 ALTER DATABASE db_name CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -50,7 +50,7 @@ FROM information_schema.tables
 WHERE table_schema = 'db_name';
 ```
 
-**Tạo user và grant quyền db**
+**Create a user and grant database permissions**
 
 ```cmd
 CREATE USER 'user_Po54a' IDENTIFIED BY 'epmxV9H1SNsWILvyUIJlEgbmgCbNHiQ4';
